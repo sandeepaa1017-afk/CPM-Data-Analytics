@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "CPM Management",
+  "short_name": "CPM",
+  "description": "CPM employee call activity and management dashboard.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#1e2470",
+  "icons": [
+    {
+      "src": "/icons/cpm-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/cpm-logo.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}
