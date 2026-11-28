@@ -12,7 +12,7 @@ Daily aggregates and date-only report filters use the India business timezone
    for `POSTGRES_PASSWORD`, `CPM_DB_PASSWORD`, `DATABASE_URL`, and
    `JWT_SECRET_KEY`. The password in `DATABASE_URL` must match
    `CPM_DB_PASSWORD`.
-2. Set `ADMIN_USERNAME` and a strong `ADMIN_PASSWORD` before seeding.
+2. Set `ADMIN_USERNAME` and a strong `ADMIN_PASSWORD` in `.env`.
 3. From this `backend` directory, start Docker:
 
    ```powershell
@@ -20,16 +20,10 @@ Daily aggregates and date-only report filters use the India business timezone
    ```
 
    PostgreSQL initializes `cpm_db` and the `cpm_user` role on the first start.
-   The API container runs `alembic upgrade head` before starting Uvicorn.
-4. Create the admin account:
-
-   ```powershell
-   docker compose exec api python seed.py
-   ```
-
-   The seed is safe to repeat: it creates the configured admin only if it does
-   not already exist. It does not create sample employees or call data.
-5. Check `http://localhost:8000/health` and open
+   The API container runs `alembic upgrade head`, creates the configured admin
+   if it does not exist, then starts Uvicorn. The seed is safe to repeat and
+   creates no sample employees or call data.
+4. Check `http://localhost:8000/health` and open
    `http://localhost:8000/docs`.
 
 The API listens on port `8000`. PostgreSQL is available to database tools at
